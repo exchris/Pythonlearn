@@ -1,0 +1,2 @@
+
+print('wr, mode')
