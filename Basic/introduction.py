@@ -71,11 +71,11 @@ print("remove letters:", letters);
 # 斐波那契子序列
 a, b = 0, 1
 while b < 10:
-    print(b)
+    print(b, end=',')
     a, b = b, a + b
 
 # **的优先级高于-,所以
-print(-3**2)
+print('\n',-3**2)
 # -9
 print((-3)**2)
 # 9
