@@ -19,10 +19,6 @@ class Solution:
         :return: str
         """
         # 将字符串转换位列表
-        lsts = s.split(" ")
-        newlst = []
-        for lst in lsts:
-            # 将字符串反转
-            newlst.append(list[::-1])
-        # 将列表转位字符串
-        return " ".join(newlst)
+        l = list(filter(lambda x: x != '', s.split(' ')))
+        l.reverse()
+        return ' '.join(l)
