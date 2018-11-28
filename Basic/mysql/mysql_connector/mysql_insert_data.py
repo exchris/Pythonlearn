@@ -18,3 +18,4 @@ mycursor.execute(sql, val)
 
 mydb.commit()  # 数据表内容有更新，必须使用到该语句
 print(mycursor.rowcount, "记录插入成功。")
+print("1 条记录已插入, ID:", mycursor.lastrowid)
