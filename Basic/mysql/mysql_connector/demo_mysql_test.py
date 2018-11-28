@@ -8,3 +8,8 @@ mydb = mysql.connector.connect(
     passwd='root'  # 数据库密码
 )
 print(mydb)
+
+mycursor = mydb.cursor()
+
+# 创建数据库
+mycursor.execute("CREATE DATABASE runoob_db")
