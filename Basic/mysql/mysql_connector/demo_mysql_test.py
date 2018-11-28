@@ -12,4 +12,4 @@ print(mydb)
 mycursor = mydb.cursor()
 
 # 创建数据库
-mycursor.execute("CREATE DATABASE runoob_db")
+mycursor.execute("CREATE DATABASE `runoob`")
