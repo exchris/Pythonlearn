@@ -42,3 +42,17 @@ print(dt)
 dt = np.dtype([('age', np.int8)])
 a = np.array([(10,), (20,), (30,)], dtype=dt)
 print(a)
+
+# 类型字段名可以用于存取实际的age列
+dt = np.dtype([('age', np.int8)])
+a = np.array([(10,), (20,), (30,)], dtype=dt)
+print(a)
+
+# 下面的示例定义一个结构化数据类型student,包含字符串字段name,
+# 整数字段 age，及浮点字段 marks，并将这个 dtype 应用到 ndarray 对象。
+student = np.dtype([('name','S20'), ('age', 'i1'), ('marks', 'f4')])
+print(student)
+
+student = np.dtype([('name','S20'), ('age', 'i1'), ('marks', 'f4')])
+a = np.array([('abc', 21, 50),('xyz', 18, 75)], dtype = student)
+print(a)
