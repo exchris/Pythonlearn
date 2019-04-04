@@ -27,6 +27,7 @@ class MyQueue():
 
     def push(self, x):
         self.lst.insert(0, x)
+        print(self.lst)
 
     def pop(self):
         return self.lst.pop()
@@ -40,7 +41,6 @@ class MyQueue():
 
 obj = MyQueue()
 obj.push(1)
-print(obj)
 obj.push(2)
 print(obj)
 print(obj.peek())
