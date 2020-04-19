@@ -39,8 +39,8 @@ for m in range(len(jsonFile)):
         # content 代表是以二进制格式表示
         picture = requests.request('get', pictureUrl).content
         # 保存图片 图片都是二进制 第一种方式
-        with open('.\\Pictures\\' + cName + skinName[n - 1] + '.jpg', 'wb') as ff:
+        with open('.\\pictures\\' + cName + skinName[n - 1] + '.jpg', 'wb') as ff:
             ff.write(picture)
 
         # 保存图片 图片都是以二进制 第二种方式
-        # urllib.request.urlretrieve(pictureUrl, '.\\Pictures\\' + cName + skinName[n - 1] + '.jpg')
+        # urllib.request.urlretrieve(pictureUrl, '.\\pictures\\' + cName + skinName[n - 1] + '.jpg')
