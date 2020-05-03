@@ -43,5 +43,37 @@ account_password_search = re.search('账号是:(.*?),密码是:(.*?),', account_
 print('读取第一个括号的内容:{}'.format(account_password_search.group(1)))
 print('读取第二个括号的内容:{}'.format(account_password_search.group(2)))
 
+# 使用"姓名:(.*?)\n"导致有效内容和无效内容混在一起
+big_small_text = """
+有效用户:
+姓名:张三
+姓名:李四
+姓名:王五
+无效用户:
+姓名:不知名的小虾米
+姓名:隐身的张大侠
+"""
+# user = re.findall('姓名:(.*?)\n', big_small_text)
+# print(user)
+# 先抓大再抓小
+user_big = re.findall('有效用户:(.*?)无效用户:', big_small_text, re.S)
+print('user_big的值为:{}'.format(user_big))
+
+user_useful = re.findall('姓名:(.*?)\n', user_big[0])
+print('真正有效的人名:{}'.format(user_useful))
+
+# 括号里有无其他字符对匹配结果的影响
+html = '''
+<div class="tail-info">客户端</div>
+<div class="tail-info">2020-04-19 13:38:00</div>
+'''
+result_1 = re.findall('tail-info">(.*?)<', html)
+result_2 = re.findall('tail-info">2020(.*?)<', html)
+result_3 = re.findall('tail-info">(2020.*?)<', html)
+
+print('括号里只有.*?时，得到的结果是:{}'.format(result_1))
+print('2020在括号外面时，得到的结果是:{}'.format(result_2))
+print('2020在括号里面时，得到的结果时:{}'.format(result_3))
+
 if __name__ == "__main__":
     pass
